@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.io.IOException;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -33,9 +31,19 @@ public class Main {
         String ah = a.getAttribute("href");
 
         if (ah.equals("https://www.java.com/ru/")) {
-            System.out.print("Test passed");
+            System.out.println("Test 1 passed");
         } else {
-            System.out.print("Test failed");
+            System.out.println("Test 1 failed");
+        }
+
+        a.click();
+
+        String t = w.getTitle();
+
+        if (t.equals("java.com: Java и вы")) {
+            System.out.println("Test 2 passed");
+        } else {
+            System.out.println("Test 2 failed");
         }
 
         w.quit();
